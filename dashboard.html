@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Attack Dashboard</h2>
+<table>
+  <thead>
+    <tr><th>ID</th><th>Type</th><th>IP</th><th>User</th><th>Pass</th><th>File</th><th>Endpoint</th><th>UA</th><th>Time</th></tr>
+  </thead>
+  <tbody>
+    {% for a in attacks %}
+    <tr>
+      <td>{{ a[0] }}</td><td>{{ a[1] }}</td><td>{{ a[2] }}</td><td>{{ a[3] or '' }}</td><td>{{ a[4] or '' }}</td>
+      <td>{{ a[5] or '' }}</td><td>{{ a[6] or '' }}</td><td style="max-width:200px;overflow:hidden;white-space:nowrap">{{ a[7] or '' }}</td><td>{{ a[8] }}</td>
+    </tr>
+    {% else %}
+    <tr><td colspan="9">No attacks logged yet</td></tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

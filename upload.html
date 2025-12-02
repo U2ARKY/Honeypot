@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Upload File for Admin Review</h2>
+<form action="/upload" method="post" enctype="multipart/form-data">
+  <input type="file" name="file" required><br><br>
+  <button type="submit">Upload</button>
+</form>
+<p style="color:gray;font-size:small">Files are saved for analysis.</p>
+{% endblock %}

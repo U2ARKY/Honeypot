@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Admin Login</h2>
+<form action="/login" method="post">
+  <label>Username: <input name="username" required></label><br><br>
+  <label>Password: <input name="password" type="password" required></label><br><br>
+  <button type="submit">Login</button>
+</form>
+<p style="color:gray;font-size:small">This page is for admin only. Login attempts are recorded for security review.</p>
+{% endblock %}
